@@ -32,7 +32,7 @@ const Form = ({onToDoChange}) => {
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Todo Form</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Add New Todo</h2>
 
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
