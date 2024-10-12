@@ -14,6 +14,7 @@ const Main = () => {
   const [editingIndex, setEditingIndex] = useState(null);
   const [editForm, setEditForm] = useState({ title: "", description: "" });
   const [filter, setFilter] = useState("all");
+  const [flag, setFlag] = useState();
 
   useEffect(() => {
     const data = localStorage.getItem("todoData");
@@ -29,7 +30,7 @@ const Main = () => {
         setLocalData([]);
       }
     }
-  }, []);
+  }, [flag]);
 
   // Function to handle delete by index
   const handleDelete = (index) => {
@@ -81,6 +82,10 @@ const Main = () => {
     }
   };
 
+  const handleFetchDataFromChild = (data) => {
+    setFlag(data)
+  };
+
   return (
     <>
       <Header />
@@ -88,7 +93,7 @@ const Main = () => {
         <div className="w-3/5">
           <h2 className="text-xl font-bold mb-4">Saved To-Do Items</h2>
 
-           {/* Filter Dropdown */}
+          {/* Filter Dropdown */}
           <div className="mb-4">
             <label htmlFor="filter" className="block text-gray-700 font-bold">
               Filter Todos:
@@ -186,7 +191,7 @@ const Main = () => {
           )}
         </div>
         <div className="w-2/5">
-          <Form />
+          <Form onToDoChange={handleFetchDataFromChild} />
         </div>
       </div>
     </>

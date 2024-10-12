@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Form = () => {
+const Form = ({onToDoChange}) => {
   const {
     register,
     handleSubmit,
@@ -19,6 +19,7 @@ const Form = () => {
       }
       todoList.push(data);
       localStorage.setItem("todoData", JSON.stringify(todoList));
+      onToDoChange(data)
       reset();
     } catch (err) {
       console.error("Error storing data", err);
