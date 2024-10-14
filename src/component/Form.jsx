@@ -27,7 +27,7 @@ const Form = ({onToDoChange}) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8"

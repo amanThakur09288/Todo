@@ -83,14 +83,14 @@ const Main = () => {
   };
 
   const handleFetchDataFromChild = (data) => {
-    setFlag(data)
+    setFlag(data);
   };
 
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4 flex space-x-4">
-        <div className="w-3/5">
+      <div className="container mx-auto p-4 flex gap-4 max-md:flex-col">
+        <div className="w-3/5 max-md:w-full">
           <h2 className="text-xl font-bold mb-4">Saved To-Do Items</h2>
 
           {/* Filter Dropdown */}
@@ -190,7 +190,7 @@ const Main = () => {
             <p className="text-gray-500">No to-do items found.</p>
           )}
         </div>
-        <div className="w-2/5">
+        <div className="w-2/5 max-md:w-full mt-5">
           <Form onToDoChange={handleFetchDataFromChild} />
         </div>
       </div>
